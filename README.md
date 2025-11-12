@@ -7,67 +7,82 @@ This repository contains a dataset of images of different dog breeds, as well as
 This repository contains everything needed to reproduce the analyses and results for this project: image data for 7 different dog breeds, Jupyter notebooks for preprocessing and analysis, output plots, and model accuracy metrics. The sections below outline software requirements, repository structure, and step-by-step instructions to reproduce the results.
 
 
-NEEDS TO BE MODIFIED BELOW
 ---
 
-## Section 1: Software and platform
+## Section 1: Software and Platform
 
-**Software Used:**
-- R Studio for data cleaning, exploratory analysis, and ARIMA modeling.
-- Git for version control and GitHub for hosting.
+*Software Used:*
 
-**Add-on R packages required (install with `install.packages()` or via `renv`)**
-- `tidyverse` (includes `dplyr`, `ggplot2`, `readr`, `tibble`, etc.)
-- `rmarkdown`, `knitr` (rendering reports) , `vader`, `forecast`
+* Python (version 3.8 or higher) for preprocessing, training, and evaluation of CNN models.
+* Jupyter Notebook for scripting and interactive analysis.
+* Git for version control and GitHub for hosting.
+
+*Python Packages Required (install via pip or conda):*
+
+* pytorch (for CNN modeling)
+* numpy (numerical operations)
+* pandas (data handling)
+* matplotlib and seaborn (visualizations)
+* scikit-learn (train/test splitting, metrics)
+* opencv-python (image preprocessing)
+
 
 ## Section 2: Map of Documentation
 
- 1. **DataFolder**
-  - `AverageTemps.csv` – Full dataset with months and years, as well as the mean maximum and minimum temperature values used in analysis. 
-  - `Metadata.md` – Metadata description file. 
-  - `mean_max_monthly_temps_2000_2025.csv` – Just the mean maximum monthly temperature data. 
-  - `mean_min_monthly_temps_2000_2025.csv` – Just the mean mimimum monthly temperature data. 
- 2. **OUTPUT**
-  - `1jantrends.png` – Scatter plot with line of best fit of the mean minimum and maximum temperatures in January from 2000-2025. 
-  - `2juntrends.png` – Scatter plot with line of best fit of the mean minimum and maximum temperatures in June from 2000-2025. 
-  - `3maxtimeseries.png` – Decomposition of the additive time series of our maximum temperature data, which shows seasonal and nonseasonal trends.
-  - `4mintimeseries.png` – Decomposition of the additive time series of our minimum temperature data, which shows seasonal and nonseasonal trends. 
-  - `6ModelPDF.pdf` – Full project analysis for building time series model with minimum and maximum temperature data. <br>
- 3. **SCRIPTSFolder**
-  - `Data Cleaning.Rmd` – Data cleaning script where data is joined as well as general cleaning as well creation of EDA plots.
-  - `Model Building.Rmd` – Model building script where time series model is fitted.
+*1. DataFolder*
+
+* Beagle/, FrenchBulldog/, GermanShepherd/, GoldenRetriever/, MiniaturePoodle/, Schnauzer/, ShihTzu/, SiberianHusky/ – Each folder contains PNG images of the corresponding breed.
+* metadata.csv – CSV file containing image IDs and corresponding breed labels for reproducibility.
+
+*2. OUTPUT*
+
+* class_distribution.png – Plot showing the number of images per breed.
+* sample_images.png – Grid of sample images from all eight breeds.
+
+*3. SCRIPTSFolder*
+
+* CNN_Model_Training.ipynb – Notebook for building, training, and evaluating the CNN model.
+* EDA.ipynb – Notebook for exploratory data analysis, including class distribution, image size, and sample images.
 
 
 ## Section 3 – How to Reproduce Our Results
 
-If you want to reproduce our analysis and see all the figures and tables from our project, follow these steps:
+*Step 1: Get the Repository*
 
-1. **Get the Repository**
-   - Clone the repo using Git:
-     ```bash
-     git clone https://github.com/gbharathit/DS-4002-Project-2.git
-     ```
-   - Or download it as a ZIP file and extract it.
-   - Open RStudio and set your working directory to the project folder.
+* Clone the repository using Git:
 
-2. **Make Sure the Data Files Are There**
-   - The following CSV files need to be in the **same folder** as `Model Building.Rmd`:
-     - `AverageTemps.csv`
-   - These files are included in the repository, so you shouldn’t need to download anything else.
+  bash
+  git clone https://github.com/gbharathit/DS-4002-Project-3.git
+  
+* Or download it as a ZIP file and extract it.
+* Open Jupyter Notebook and set your working directory to the project folder.
 
-3. **Install R and Packages**
-   - We used **R** (version 4.0 or higher) and RStudio.
-   - Install the packages we used if you don’t already have them:
-     ```r
-     install.packages(c("tidyverse", "dplyr", "ggplot2",
-                        "tidytext", "forecast", "knitr", "rmarkdown"))
-     ```
+*Step 2: Make Sure the Data Files Are There*
 
-4. **Run the Analysis**
-   - Open `Model Building.Rmd` in RStudio.
-   - Click **Knit** to run all the code and generate the full report.
-   - This will produce the HTML (or PDF) report with all of our results, including plots, tables, and model outputs.
+* Ensure that all breed folders (Beagle/, FrenchBulldog/, etc.) and metadata.csv are in the same folder as the notebooks.
+* These files are included in the repository, so no additional downloads are needed.
 
-5. **Troubleshooting**
-   - Make sure your working directory is the project folder and the CSV files are in the right place.
-   - If anything seems off, you can run `sessionInfo()` in R to check your package versions.
+*Step 3: Install Python and Packages*
+
+* Install Python (version 3.8 or higher) if not already installed.
+* Install required packages:
+
+  bash
+  pip install tensorflow numpy pandas matplotlib seaborn scikit-learn opencv-python
+  
+*Step 4: Run the Analysis*
+
+* Open EDA.ipynb in Jupyter Notebook or Google Colab to explore the dataset.
+* Open Data_Preprocessing.ipynb to preprocess images and create train/test splits.
+* Open CNN_Model_Training.ipynb to train the CNN model and evaluate predictions.
+* Generated outputs include plots, metrics, and confusion matrices for model performance.
+
+*Step 5: Troubleshooting*
+
+* Make sure your working directory is set to the project folder.
+* Ensure all image folders and metadata.csv are present.
+* If issues occur, check your Python environment and package versions with:
+
+  python
+  !pip list
+
