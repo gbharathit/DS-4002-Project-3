@@ -29,20 +29,23 @@ This repository contains everything needed to reproduce the analyses and results
 
 ## Section 2: Map of Documentation
 
-*1. DataFolder*
+*1. DATA Folder*
 
 * Beagle/, FrenchBulldog/, GermanShepherd/, GoldenRetriever/, MiniaturePoodle/, Schnauzer/, ShihTzu/, SiberianHusky/ – Each folder contains PNG images of the corresponding breed.
 * metadata.csv – CSV file containing image IDs and corresponding breed labels for reproducibility.
 
-*2. OUTPUT*
+*2. OUTPUT Folder*
 
-* class_distribution.png – Plot showing the number of images per breed.
-* sample_images.png – Grid of sample images from all eight breeds.
+* classdistributionplot.jpg – Plot showing the number of images per breed.
+* heightplot.png – Histogram of image heights across all images.
+* widthplot.png – Histogram of image widths across all images.
 
 *3. SCRIPTSFolder*
 
-* CNN_Model_Training.ipynb – Notebook for building, training, and evaluating the CNN model.
-* EDA.ipynb – Notebook for exploratory data analysis, including class distribution, image size, and sample images.
+* ClassDistributionPlot.Rmd – Script used to create the class distribution plot.
+* Histograms of Image Width and Height.ipynb – Script used to create the histograms of image height and widths.
+* MI3_Modelupdated.ipynb – Notebook for building, training, and evaluating the CNN model.
+
 
 
 ## Section 3 – How to Reproduce Our Results
@@ -72,9 +75,8 @@ This repository contains everything needed to reproduce the analyses and results
   
 *Step 4: Run the Analysis*
 
-* Open EDA.ipynb in Jupyter Notebook or Google Colab to explore the dataset.
-* Open Data_Preprocessing.ipynb to preprocess images and create train/test splits.
-* Open CNN_Model_Training.ipynb to train the CNN model and evaluate predictions.
+* Open ClassDistributionPlot.Rmd in R and Histograms of Image Width and Height.ipynb in Jupyter Notebook or Google Colab to explore the dataset.
+* Open MI3_Modelupdated.ipynb to train the CNN model and evaluate predictions.
 * Generated outputs include plots, metrics, and confusion matrices for model performance.
 
 *Step 5: Troubleshooting*
