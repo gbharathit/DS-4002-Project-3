@@ -1,0 +1,22 @@
+---
+title: "EDA Plots"
+output: html_document
+date: "2025-11-10"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+library(tidyverse)
+
+breedcount <- data.frame(breeds = c('French Bulldog', 'Schnauzer', 'German Shepherd', 'Miniature Poodle', 'Golden Retriever', 'Beagle', 'Shi-Tzu', 'Siberian Husky'), count = c(159,155,152,155,150,195,214,192))
+
+breedcount <- breedcount %>% arrange(count) %>% mutate(breeds = fct_inorder(breeds))
+
+ggplot(breedcount,aes(y=breeds,x=count)) + geom_histogram(stat='identity', fill='chocolate') + theme_minimal() + 
+  labs(x='Number of Images',y='Dog Breed',title='Number of Images for Each Dog Breed')
+```
+
