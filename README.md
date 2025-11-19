@@ -1,6 +1,6 @@
 # DS-4002-Project-3
 
-This repository contains a dataset of images of different dog breeds, as well as scripts and outputs to accurately classify what breed a dog image is classified. Our project uses a CNN (Convolutional Neural Network) model, a type of deep learning model, to see how an image is classified as being a part of 7 different dog breeds. All images used, exploratory analyses, and model predictions are included to enable reproduction of all results. 
+This repository contains a dataset of images of different dog breeds, as well as scripts and outputs to accurately classify what breed a dog image is classified. Our project uses a CNN (Convolutional Neural Network) model, a type of deep learning model, to see how an image is classified as being a part of 8 different dog breeds. All images used, exploratory analyses, and model predictions are included to enable reproduction of all results. 
 
 ## Contents of this repository
 
